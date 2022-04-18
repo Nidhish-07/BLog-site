@@ -12,27 +12,13 @@
     </header>
 
     <main>
+      {% for post in posts %}
       <article>
-        <h2>Javascript</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, veniam
-          qui! Perferendis facere modi tempore iusto numquam voluptates unde,
-          exercitationem ipsam tenetur quia repellat consectetur necessitatibus,
-          deserunt possimus optio voluptatum!
-        </p>
-        <time>published: </time>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
       </article>
-      <hr />
-      <article>
-        <h2>Python</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores,
-          facere velit. Dolores placeat optio labore tempora quam libero,
-          doloribus similique aperiam. Saepe sed quisquam facere alias quod
-          beatae? Illum, vero.
-        </p>
-        <time>published:</time>
-      </article>
+      {% endfor %}
     </main>
   </body>
 </html>
